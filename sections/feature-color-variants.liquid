@@ -42,10 +42,14 @@
         {% endfor %}
       </div>
       <div class="fcv-content">
-        <h2 class="fcv-heading">{{ section.settings.heading }}</h2>
-        <div class="fcv-text">
-          {{ section.settings.text }}
-        </div>
+        {% if section.settings.heading != blank %}
+          <h2 class="fcv-heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.text != blank %}
+          <div class="fcv-text">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
         {% if section.settings.button_label != blank %}
           <a href="{{ section.settings.button_link }}" class="fcv-button">{{ section.settings.button_label }}</a>
         {% endif %}
